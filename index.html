@@ -8,9 +8,13 @@
     <title>doolbay - E-commerce development Agency</title>
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body class="is-boxed has-animations">
+    <div id="example">
+        <app-header></app-header>
+      </div>
     <div class="body-wrap boxed-container">
         <header class="site-header">
             <div class="container">
@@ -1963,7 +1967,19 @@
             </div>
         </footer>
     </div>
+    <script>
+        var MyComponent = Vue.extend({
+            template: '<div class="header">Joara</div>'
+        })
 
+        // globally register
+        Vue.component('app-header', MyComponent)
+
+        // create a root instance
+        new Vue({
+            el: '#example'
+        })
+    </script>
     <script src="dist/js/main.min.js"></script>
 </body>
 
